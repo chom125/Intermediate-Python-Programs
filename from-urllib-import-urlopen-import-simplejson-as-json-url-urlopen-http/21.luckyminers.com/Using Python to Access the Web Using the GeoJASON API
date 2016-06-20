@@ -1,0 +1,7 @@
+from urllib import urlopen
+import simplejson as json
+
+url = urlopen('http://21.luckyminers.com/index.php?page=api&action=getpoolstatus&api_key=8dba7050f9fea1e6a554bbcf4c3de5096795b253b45525c53562b72938771c41').read()
+url = json.loads(url)
+
+print url.get('getpoolstatus').get('data').get('networkdiff')
